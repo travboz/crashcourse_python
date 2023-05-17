@@ -1,0 +1,5 @@
+In Python you can print strings.
+In Python you can add numbers.
+In Python you can open files.
+In Python you can create functions.
+In Python you can solve problems.
