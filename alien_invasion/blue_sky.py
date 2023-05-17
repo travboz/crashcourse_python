@@ -1,6 +1,9 @@
 import pygame
 import sys
 
+from motorbike import Motorbike
+
+
 class BlueSky:
     """Make a pygame window with a blue background."""
     def __init__(self):
@@ -11,7 +14,10 @@ class BlueSky:
         self.bg_color = (55, 55, 230)
         self.screen = pygame.display.set_mode((1200, 800))
 
-        pygame.display.set_caption("Blue Background")
+        pygame.display.set_caption("Blue Sky")
+
+        self.motorbike = Motorbike(self)
+
 
     def run_game(self):
         """State the main loop for the game."""
@@ -32,7 +38,7 @@ class BlueSky:
         """Update images on the screen, and flip to the new screen."""
         # Redraw screen during each pass through the loop
         self.screen.fill(self.bg_color)
-
+        self.motorbike.blitme()
         # Make the most recently drawn screen visible
         pygame.display.flip()
 
