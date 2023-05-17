@@ -1,28 +1,17 @@
-import sys
 import pygame
+import sys
 
-from alien_invasion_settings import Settings
-from ship import Ship
-
-class AlienInvasion:
-    """Overall class to manage game assets and behavioiur."""
+class BlueSky:
+    """Make a pygame window with a blue background."""
     def __init__(self):
-        """Initiliase the game, create game resources."""
-        pygame.init()
-
-        # defining a clock to control the framerate of the game
+        pygame.init() # init the game
         self.clock = pygame.time.Clock()
-        self.settings = Settings()
+        self.screen_width = 1200
+        self.screen_height = 800
+        self.bg_color = (55, 55, 230)
+        self.screen = pygame.display.set_mode((1200, 800))
 
-        self.screen = pygame.display.set_mode(
-            (self.settings.screen_width, self.settings.screen_height)
-        )
-        pygame.display.set_caption("Alien Invasion")
-
-        # setting the background colour
-        # self.bg_color = (230, 230, 230)
-
-        self.ship = Ship(self)
+        pygame.display.set_caption("Blue Background")
 
     def run_game(self):
         """State the main loop for the game."""
@@ -42,13 +31,12 @@ class AlienInvasion:
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         # Redraw screen during each pass through the loop
-        self.screen.fill(self.settings.bg_color)
-        self.ship.blitme()
+        self.screen.fill(self.bg_color)
 
         # Make the most recently drawn screen visible
         pygame.display.flip()
 
+
 if __name__ == '__main__':
-    # Make a game instance, and run the game.
-    ai = AlienInvasion()
-    ai.run_game()
+    game = BlueSky()
+    game.run_game()
