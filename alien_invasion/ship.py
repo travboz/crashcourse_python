@@ -9,7 +9,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         # Load the ship image and get its rect
-        self.image = pygame.image.load('/Users/travb/Desktop/learning_python/learning_python_git/pcc_3e-main/chapter_12/adding_ship_image/images')
+        self.image = pygame.image.load('/Users/travb/Desktop/learning_python/learning_python_git/pcc_3e-main/chapter_12/adding_ship_image/images/ship.bmp')
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen
